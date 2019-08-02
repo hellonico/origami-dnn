@@ -11,8 +11,8 @@
     (d/blue-boxes! labels)))
 
 (defn -main [& args]
-  (let [net (dnn/read-net-from-caffe "resources/mobilenet/deploy.prototxt" "resources/mobilenet/mobilenet_iter_73000.caffemodel")
-        labels (line-seq (clojure.java.io/reader "resources/mobilenet/MobileNetSSD.names"))]
+  (let [net (dnn/read-net-from-caffe "networks/mobilenet/deploy.prototxt" "networks/mobilenet/mobilenet_iter_73000.caffemodel")
+        labels (line-seq (clojure.java.io/reader "networks/mobilenet/MobileNetSSD.names"))]
     (cams-window
      {:frame {:hide true}
       :video {:fn identity :recording {:output "catout.mp4"}}

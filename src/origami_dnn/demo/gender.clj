@@ -6,7 +6,7 @@
             [origami-dnn.net.core :as net]))
 
 (defn run-net [input output]
-   (let [ [net opts labels] (origami-dnn/read-net-from-folder "resources/caffe/convnet/gender")]
+   (let [ [net opts labels] (origami-dnn/read-net-from-folder "networks/caffe/convnet/gender")]
     (println "Running convnet gender on image:" input " > " output)
     (-> input
         (imread)

@@ -29,7 +29,7 @@ To run detection on a pretrained network, read the image, and call the network d
             [opencv4.utils :refer [resize-by simple-cam-window]]))
 
 (defn -main [& args]
-  (let [ [net opts labels] (origami-dnn/read-net-from-folder "resources/caffe/mobilenet") ]
+  (let [ [net opts labels] (origami-dnn/read-net-from-folder "networks/caffe/mobilenet") ]
     (simple-cam-window
      (read-string (slurp "cam_config.edn"))
      (fn [buffer]
@@ -70,7 +70,8 @@ To run detection on a pretrained network, read the image, and call the network d
 This is a sample output generated on a macbook.
 
 ```
-# lein run -m  origami-dnn.demo.mobilenet.catvideotofile resources/vids/Marcel.m4v
+lein run -m  origami-dnn.demo.mobilenet.catvideotofile resources/vids/Marcel.m4v
+# or 
 lein run -m  origami-dnn.demo.marcel.marcel
 ```
 

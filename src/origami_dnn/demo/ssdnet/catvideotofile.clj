@@ -14,7 +14,7 @@
     (let [
           input (or (first args) "resources/cat.mp4")
           output-file (or (second args) (str "cat_" (Date.) ".mpeg"))
-          [net opts labels] (origami-dnn/read-net-from-folder "resources/caffe/mobilenet") 
+          [net opts labels] (origami-dnn/read-net-from-folder "networks/caffe/mobilenet") 
           cap (new-videocapture input )
           stream-size (video-size cap)
           buffer (new-mat)

@@ -6,7 +6,7 @@
    [origami-dnn.net.core :as net]))
 
 (defn run-bvlc [input output]
- (let [ [net opts labels] (origami-dnn/read-net-from-folder "resources/caffe/bvlc_alexnet")]
+ (let [ [net opts labels] (origami-dnn/read-net-from-folder "networks/caffe/bvlc_alexnet")]
     (println "Running bvlc on image:" input " > " output)
     (-> input
         (imread)

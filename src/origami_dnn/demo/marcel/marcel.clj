@@ -5,7 +5,7 @@
             ; [opencv4.core :refer :all]
             [opencv4.utils :refer [resize-by simple-cam-window]]))
 
-(let [ [net opts labels] (origami-dnn/read-net-from-folder "resources/caffe/mobilenet")]
+(let [ [net opts labels] (origami-dnn/read-net-from-folder "networks/caffe/mobilenet")]
 
 ; (defn handle [buffer]
 ;   (-> buffer

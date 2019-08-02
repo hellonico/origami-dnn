@@ -3,7 +3,7 @@
 
 (defn -main [& args]
    (run-yolo 
-    "resources/yolov3/yolov3.cfg" 
-    "resources/yolov3/yolov3.weights" 
+    "networks/yolov3/yolov3.cfg" 
+    "networks/yolov3/yolov3.weights" 
     (or (first args) "resources/catwalk.jpg")
     (or (second args) "yolo_v3_output.jpg")))

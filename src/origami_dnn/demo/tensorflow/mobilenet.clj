@@ -18,8 +18,8 @@
 
 (defn -main [& args]
   (run-net
-   "resources/tensorflow/ssd_mobilenet_v1_coco_2017_11_17.pb"
-   "resources/tensorflow/ssd_mobilenet_v1_coco_2017_11_17.pbtxt"
-   "resources/tensorflow/ssd_mobilenet_v1.labels"
+   "networks/tensorflow/ssd_mobilenet_v1_coco_2017_11_17.pb"
+   "networks/tensorflow/ssd_mobilenet_v1_coco_2017_11_17.pbtxt"
+   "networks/tensorflow/ssd_mobilenet_v1.labels"
    (or (first args) "resources/catwalk.jpg")
    (or (second args) "tf_output.jpg")))
