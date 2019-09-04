@@ -1,7 +1,19 @@
 (defproject origami-dnn "0.1.0"
-  ; :description "FIXME: write description"
-  ; :url "http://example.com/FIXME"
   :main origami-dnn.core
+
+  ; FIXME: just replace this in all the examples and revert
+  :resource-paths ["pkg-resources"]
+
+  :release-tasks 
+  [["vcs" "assert-committed"]
+   ["change" "version" "leiningen.release/bump-version" "release"]
+   ["vcs" "commit"]
+   ["vcs" "tag" "--no-sign"]
+   ["deploy" "clojars"]
+   ["change" "version" "leiningen.release/bump-version"]
+   ["vcs" "commit"]
+   ["vcs" "push"]]
+
   :jvm-opts ["-Djava.library.path=natives"]
   :aliases {"mobilenet.cam" ["run" "-m" "origami-dnn.demo.ssdnet.cam"]
             "mobilenet.videotofile" ["run" "-m" "origami-dnndemo.ssdnet.catvideotofile"]
@@ -31,4 +43,5 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :repositories [["vendredi" "https://repository.hellonico.info/repository/hellonico/"]]
-  :dependencies [[org.clojure/clojure "1.8.0"] [origami/origami "4.1.1-1"]])
+  :dependencies [[org.clojure/clojure "1.8.0"] [origami/origami "4.1.1-4"]
+  ])
