@@ -3,7 +3,7 @@
             [opencv4.dnn :as dnn]
             [clojure.java.io :as io]
             [origami-dnn.draw :as d]
-            [origami-dnn.net.mobilenet :as mobilenet]
+            [origami-dnn.net.mobilenet :as mobilenet] ; ?? get rid of this ?
             [origami-dnn.net.yolo :as yolo]))
 
 ; FIXME: MOVE THIS OUT !
