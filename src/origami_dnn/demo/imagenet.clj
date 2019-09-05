@@ -6,7 +6,7 @@
    [origami-dnn.net.core :as c]))
 
 (defn run-googlenet [input output]
-  (let [ [net opts labels] (origami-dnn/read-net-from-folder "networks/caffe/googlenet")]
+  (let [ [net opts labels] (origami-dnn/read-net-from-repo "networks.caffe:googlenet:1.0.0")]
     (println "Running googlenet on image:" input " > " output)
     (-> input
         (imread)

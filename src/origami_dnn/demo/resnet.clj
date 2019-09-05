@@ -7,7 +7,7 @@
    [origami-dnn.net.core :as c]))
 
 (defn run-places365 [input output]
-  (let [[net opts labels] (origami-dnn/read-net-from-folder "networks/resnet")]
+  (let [[net opts labels] (origami-dnn/read-net-from-repo "networks.caffe:resnet:1.0.0")]
     (println "Running resnet on image:" input " > " output)
     (-> input
         (imread)

@@ -22,3 +22,12 @@ upload-networks.sh
 .classpath
 .project
 .settings/
+bvlc_alexnet-1.0.0.zip/
+bvlc_output.jpg
+convnet-gender-1.0.0.zip/
+gender_output.jpg
+places365-1.0.0.zip/
+places365_output.jpg
+resnet-1.0.0.zip/
+resnet_output.jpg
+scripts/

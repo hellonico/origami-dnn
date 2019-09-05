@@ -36,7 +36,8 @@
 
 (defn get-tmp-folder [uri]
   (str 
-  (System/getProperty "user.dir") "/" (last (clojure.string/split uri #"/"))  ))
+  (or (System/getProperty "networks.local") (System/getProperty "user.dir"))
+   "/" (last (clojure.string/split uri #"/"))  ))
 
 (defn fetch [uri]
   (let [folder (get-tmp-folder uri)]
@@ -67,7 +68,7 @@
   (let [repo (or (System/getProperty "networks.repo") "http://repository.hellonico.info/repository/hellonico/")
   [group art version] (clojure.string/split spec #":")
   type_ (second (clojure.string/split group #"\."))
-  uri (str repo group "/" art "/" version "/" art "-" version ".zip")
+  uri (str repo "networks/" type_ "/" art "/" version "/" art "-" version ".zip")
   ]
   (println "Loading network: [" type_ "]:" spec )
   (read-net-from-uri uri (keyword type_))))
