@@ -19,3 +19,6 @@ mobilenet-1.0.0.zip/
 mobilenet.zip
 search.sh
 upload-networks.sh
+.classpath
+.project
+.settings/

@@ -9,7 +9,7 @@
   (let [
        input (or (first args) "resources/catwalk.jpg")
        output (or (second args) "mobilenet_output.jpg")
-       [net opts labels] (origami-dnn/read-net-from-folder "networks/caffe/mobilenet") ]
+       [net opts labels](origami-dnn/read-net-from-repo "networks.caffe:mobilenet:1.0.0") ]
     (println "Running mobilenet on image:" input " > " output)
     (-> input
         (imread)

@@ -55,19 +55,22 @@
     (recur (.getNextEntry in)))))))
     folder))
 
-(defn read-net-from-uri [uri]
+(defn read-net-from-uri 
+  ([uri] (read-net-from-uri :caffe))
+  ([uri _type]
   (let [ folder (fetch uri)]
-  (read-net-from-folder folder)))
+  (read-net-from-folder folder))))
+
+; spec is something like
+; networks.caffe:mobilenet:1.0.0
+(defn read-net-from-repo [ spec ]
+  (let [repo (or (System/getProperty "networks.repo") "http://repository.hellonico.info/repository/hellonico/")
+  [group art version] (clojure.string/split spec #":")
+  type_ (second (clojure.string/split group #"\."))
+  uri (str repo group "/" art "/" version "/" art "-" version ".zip")
+  ]
+  (println "Loading network: [" type_ "]:" spec )
+  (read-net-from-uri uri (keyword type_))))
 
 (defn -main[ & args]
   (println (slurp "README.md")))
-
-(comment 
-  
-
-
-(fetch
-  "https://repository.hellonico.info/repository/hellonico/org/hellonico/jakaroma/0.2/jakaroma-0.2.jar"
-  )
-
-  )

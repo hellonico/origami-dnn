@@ -13,7 +13,7 @@
 (defn -main [& args]
   (let [input "./resources/vids/Marcel2.m4v"
         output-file "marcel2.mpeg"
-        [net opts labels] (origami-dnn/read-net-from-folder "networks/caffe/mobilenet")
+        [net opts labels] (origami-dnn/read-net-from-repo "networks.caffe:mobilenet:1.0.0")
         cap (new-videocapture input)
         stream-size (rotated-video-size cap)
         buffer (new-mat)
