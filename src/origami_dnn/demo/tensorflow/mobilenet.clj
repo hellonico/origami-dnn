@@ -2,14 +2,14 @@
   (:require [opencv4.core :refer [imread imwrite]]
             [opencv4.dnn :as dnn]
             [opencv4.utils :as u]
+            [origami-dnn.core :as origami-dnn]
             [clojure.pprint]
             [origami-dnn.draw :as d]
             [origami-dnn.net.mobilenet :as mobilenet]))
 
-(defn run-net [protofile caffe labels input output]
-  (let [net (dnn/read-net-from-tensorflow protofile caffe)
-        labels (line-seq (clojure.java.io/reader labels)) ]
-    (println "Running tensorflow/mobilenet [" protofile "] on image:" input " > " output)
+(defn run-net [input output]
+  (let [[net opt labels] (origami-dnn/read-net-from-repo "networks.tensorflow:tf-ssdmobilenet:1.0.0")]
+    (println "Running tensorflow/mobilenet on image:" input " > " output)
     (-> input
         (imread)
         (mobilenet/find-objects net {:size 300 :swap-rgb true})
@@ -18,8 +18,5 @@
 
 (defn -main [& args]
   (run-net
-   "networks/tensorflow/ssd_mobilenet_v1_coco_2017_11_17.pb"
-   "networks/tensorflow/ssd_mobilenet_v1_coco_2017_11_17.pbtxt"
-   "networks/tensorflow/ssd_mobilenet_v1.labels"
    (or (first args) "resources/catwalk.jpg")
    (or (second args) "tf_output.jpg")))
