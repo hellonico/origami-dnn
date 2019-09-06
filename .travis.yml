@@ -1,0 +1,8 @@
+dist: xenial
+language: clojure
+jdk:
+ - openjdk8
+ - oraclejdk11
+ - openjdk11
+ - openjdk12
+ - openjdk-ea
