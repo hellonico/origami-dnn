@@ -61,6 +61,7 @@
   (let [folder (get-tmp-folder uri)]
   (if (not (.exists (io/as-file folder)))
   (with-open [in (java.util.zip.ZipInputStream. (io/input-stream uri))]
+    (println "Extracting [" uri "]")
     (loop [entry (.getNextEntry in)]
     (if (not (nil? entry))
     (let [
@@ -68,7 +69,7 @@
       f (io/file path) 
       parent (.getParentFile f)
       ]
-    (println path ":" (.isDirectory entry))
+    (println ">" (.getName entry))
     (.mkdirs parent)
     (if (not (.isDirectory entry)) (io/copy in f))
     (recur (.getNextEntry in)))))))
