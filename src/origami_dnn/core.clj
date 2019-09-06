@@ -2,8 +2,7 @@
   (:require [opencv4.core :refer [min-max-loc new-size new-scalar imread imwrite]]
             [opencv4.dnn :as dnn]
             [clojure.java.io :as io]
-            [clojure.sring :as s]
-            ]))
+            [clojure.string :as s]))
 
 (defn- find-first-file [files ext]
  (let [f (->> files

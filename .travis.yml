@@ -6,3 +6,5 @@ jdk:
  - openjdk11
  - openjdk12
  - openjdk-ea
+before_script:
+- git lfs pull
