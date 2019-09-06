@@ -2,26 +2,12 @@
   (:require [opencv4.core :refer [min-max-loc new-size new-scalar imread imwrite]]
             [opencv4.dnn :as dnn]
             [clojure.java.io :as io]
-            [origami-dnn.draw :as d]
-            [origami-dnn.net.mobilenet :as mobilenet] ; ?? get rid of this ?
-            [origami-dnn.net.yolo :as yolo]))
-
-; FIXME: MOVE THIS OUT !
-(defn run-yolo [cfg-file weights-file & args]
-  (let [input (or (first args) "resources/catwalk.jpg")
-        net (dnn/read-net-from-darknet cfg-file weights-file)
-        labels (line-seq (clojure.java.io/reader "networks/yolov3/coco.names"))
-        output (or (second args) "yolo_output.jpg")]
-      (println "Running yolo [" cfg-file "] on image:" input " > " output)
-      (-> input
-          (imread)
-          (yolo/find-objects net)
-          (d/blue-boxes! labels)
-          (imwrite output))))
+            [clojure.sring :as s]
+            ]))
 
 (defn- find-first-file [files ext]
  (let [f (->> files
-       (filter #(= ext (last (clojure.string/split (.getName %) #"\."))))
+       (filter #(= ext (last (s/split (.getName %) #"\."))))
        (first)
        (str))] 
 ;  (println "Found: [" ext " ] > " f " < ")       
@@ -30,7 +16,7 @@
 (defn- folder-contains[files_ ext]
 (not 
   (empty? (->> files_ 
-      (filter #(clojure.string/includes?  (.getName %) ext ))))))
+      (filter #(s/includes?  (.getName %) ext ))))))
   
 (defn- guess-network-type [files]
   (cond 
@@ -44,7 +30,7 @@
         labels (cond  (= "" l) (find-first-file files "names") :else l ) ]
   ; (println "Loading labels:" labels)
   ; (println (map #(.getName %) files))
-  (line-seq (clojure.java.io/reader labels))))
+  (line-seq (io/reader labels))))
 
 ; [ net opts names]
 (defn- read-net-from-files [files]
@@ -64,13 +50,13 @@
      (load-labels files) ]))
 
 (defn read-net-from-folder [folder]
-  (let [files (file-seq (clojure.java.io/file folder))]
+  (let [files (file-seq (io/file folder))]
     (read-net-from-files files)))
 
 (defn get-tmp-folder [uri]
   (str 
   (or (System/getProperty "networks.local") (System/getProperty "user.dir"))
-   "/" (last (clojure.string/split uri #"/"))  ))
+   "/" (last (s/split uri #"/"))  ))
 
 (defn fetch [uri]
   (let [folder (get-tmp-folder uri)]

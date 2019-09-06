@@ -3,7 +3,7 @@
    [opencv4.dnn :as dnn]
    [origami-dnn.draw :as d]
    [origami-dnn.core :as origami-dnn]
-   [opencv4.core :refer [imread imwrite new-scalar]]
+   [opencv4.core :refer [imread imwrite]]
    [origami-dnn.net.core :as c]))
 
 (defn run-places365 [input output]
