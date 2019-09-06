@@ -42,8 +42,8 @@
 (defn- load-labels [files]
   (let [l (find-first-file files "labels" )
         labels (cond  (= "" l) (find-first-file files "names") :else l ) ]
-  (println "Loading labels:" labels)
-  (println (map #(.getName %) files))
+  ; (println "Loading labels:" labels)
+  ; (println (map #(.getName %) files))
   (line-seq (clojure.java.io/reader labels))))
 
 ; [ net opts names]
@@ -58,7 +58,9 @@
     ] 
   (println "Loaded:" net)
   [  net
-     (try (read-string (slurp (find-first-file files "edn"))) (catch Exception e (println "no option file found")))
+     (try (read-string (slurp (find-first-file files "edn"))) (catch Exception e 
+      ; (println "no option file found")
+      ))
      (load-labels files) ]))
 
 (defn read-net-from-folder [folder]

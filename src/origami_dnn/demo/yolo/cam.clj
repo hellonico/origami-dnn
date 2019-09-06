@@ -1,13 +1,15 @@
 (ns origami-dnn.demo.yolo.cam
-  (:require [origami-dnn.net.yolo :refer :all]
+  (:require [origami-dnn.net.yolo :as yolo]
             [opencv4.dnn :as dnn]
             [origami-dnn.draw :as d]
+            [origami-dnn.core :as origami-dnn]
             [opencv4.utils :refer [resize-by simple-cam-window]]))
 
 (defn -main [& args]
-   (let [net (dnn/read-net-from-darknet "networks/yolov2/yolov2-tiny.cfg" "networks/yolov2/yolov2-tiny.weights")
-        labels (line-seq (clojure.java.io/reader "networks/yolov3/coco.names"))]
+   (let [[net opts labels] (origami-dnn/read-net-from-repo "networks.yolo:yolov2-tiny:1.0.0")]
   (simple-cam-window
    (read-string (slurp "cam_config.edn"))
    (fn [buffer]
-     (-> buffer (find-objects net) (d/blue-boxes! labels) )))))
+     (-> buffer (yolo/find-objects net) (d/blue-boxes! labels) )))))
+
+; (-main)
