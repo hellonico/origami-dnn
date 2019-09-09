@@ -89,7 +89,7 @@
   uri (str repo "networks/" type_ "/" art "/" version "/" art "-" version ".zip")
   ]
   (println "Loading network: [" type_ "]:" spec )
-  (read-net-from-uri uri (keyword type_))))
+  (read-net-from-uri uri)))
 
 (defn -main[ & args]
   (println (slurp "README.md")))
