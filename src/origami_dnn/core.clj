@@ -76,10 +76,9 @@
     folder))
 
 (defn read-net-from-uri 
-  ([uri] (read-net-from-uri :caffe))
-  ([uri _type]
-  (let [ folder (fetch uri)]
-  (read-net-from-folder folder))))
+  [uri] 
+   (let [ folder (fetch uri)]
+   (read-net-from-folder folder)))
 
 ; spec is something like
 ; networks.caffe:mobilenet:1.0.0
