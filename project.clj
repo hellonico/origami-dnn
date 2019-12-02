@@ -43,5 +43,5 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :repositories [["vendredi" "https://repository.hellonico.info/repository/hellonico/"]]
-  :dependencies [[org.clojure/clojure "1.8.0"] [origami/origami "4.1.1-6"]
+  :dependencies [[org.clojure/clojure "1.8.0"] [origami/origami "4.1.2"]
   ])
