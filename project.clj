@@ -1,4 +1,4 @@
-(defproject origami-dnn "0.1.6-SNAPSHOT"
+(defproject origami-dnn "0.1.6"
   :main origami-dnn.core
 
   ; FIXME: just replace this in all the examples and revert
