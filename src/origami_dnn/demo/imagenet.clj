@@ -1,7 +1,7 @@
 (ns origami-dnn.demo.imagenet
   (:require
    [origami-dnn.draw :as d]
-   [origami-dnn.core :as origami-dnn]
+   [opencv4.dnn.core :as origami-dnn]
    [opencv4.core :refer [imread imwrite new-scalar]]
    [origami-dnn.net.core :as c]))
 

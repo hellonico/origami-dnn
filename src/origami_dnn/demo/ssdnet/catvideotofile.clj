@@ -3,7 +3,7 @@
             [opencv4.utils :refer [show re-show]]
             [origami-dnn.draw :as d]
             [opencv4.video :refer [CV_CAP_PROP_FRAME_HEIGHT CV_CAP_PROP_FRAME_WIDTH new-videowriter]]
-            [origami-dnn.core :as origami-dnn]
+            [opencv4.dnn.core :as origami-dnn]
             [opencv4.core :refer [new-mat resize! new-size new-videocapture imread imwrite]])
   (:import (java.util Date)))
 

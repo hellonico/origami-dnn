@@ -1,6 +1,6 @@
 (ns origami-dnn.demo.bvlc
   (:require
-   [origami-dnn.core :as origami-dnn] 
+   [opencv4.dnn.core :as origami-dnn] 
    [origami-dnn.draw :as d]
    [opencv4.core :refer [imread imwrite]]
    [origami-dnn.net.core :as net]))

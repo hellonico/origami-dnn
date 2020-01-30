@@ -1,6 +1,6 @@
 (ns origami-dnn.demo.age
   (:require [opencv4.core :refer [imread imwrite]]
-            [origami-dnn.core :as origami-dnn]
+            [opencv4.dnn.core :as origami-dnn]
             [opencv4.utils :as u]
             [origami-dnn.draw :as d]
             [origami-dnn.net.core :as net]))

@@ -1,6 +1,6 @@
 (ns origami-dnn.demo.gender
   (:require [opencv4.core :refer [imread imwrite]]
-            [origami-dnn.core :as origami-dnn]
+            [opencv4.dnn.core :as origami-dnn]
             [clojure.pprint]
             [origami-dnn.draw :as d]
             [origami-dnn.net.core :as net]))

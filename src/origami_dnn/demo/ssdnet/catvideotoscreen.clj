@@ -1,7 +1,7 @@
 (ns origami-dnn.demo.ssdnet.catvideotoscreen
   (:require [origami-dnn.net.mobilenet :refer [find-objects]]
             [origami-dnn.draw :as d]
-            [origami-dnn.core :as origami-dnn]
+            [opencv4.dnn.core :as origami-dnn]
             [opencv4.utils :refer [resize-by simple-cam-window]]))
 
 (defn -main [& args]

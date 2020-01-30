@@ -2,7 +2,7 @@
   (:require [origami-dnn.net.yolo :as yolo]
     [opencv4.dnn :as dnn]
     [origami-dnn.draw :as d]
-    [origami-dnn.core :as origami-dnn]
+    [opencv4.dnn.core :as origami-dnn]
     [opencv4.utils :refer [resize-by simple-cam-window]]))
 
 (defn -main [& args]

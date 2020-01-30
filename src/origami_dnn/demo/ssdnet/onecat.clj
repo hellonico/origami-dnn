@@ -3,7 +3,7 @@
   [opencv4.core :refer [imread imwrite]]
   [origami-dnn.draw :as d]
   [origami-dnn.net.mobilenet :as mobilenet]
-  [origami-dnn.core :as origami-dnn]))
+  [opencv4.dnn.core :as origami-dnn]))
 
 (defn -main [& args]
   (let [

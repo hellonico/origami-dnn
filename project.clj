@@ -1,5 +1,5 @@
 (defproject origami-dnn "0.1.7-SNAPSHOT"
-  :main origami-dnn.core
+  :main opencv4.dnn.core
 
   ; FIXME: just replace this in all the examples and revert
   :resource-paths ["pkg-resources"]
@@ -43,5 +43,5 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :repositories [["vendredi" "https://repository.hellonico.info/repository/hellonico/"]]
-  :dependencies [[org.clojure/clojure "1.8.0"] [origami/origami "4.1.2"]
+  :dependencies [[org.clojure/clojure "1.8.0"] [origami/origami "4.2.0-0"]
   ])

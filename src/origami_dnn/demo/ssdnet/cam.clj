@@ -1,7 +1,7 @@
 (ns origami-dnn.demo.ssdnet.cam
   (:require [origami-dnn.net.mobilenet :refer [find-objects]]
             [opencv4.dnn :as dnn]
-            [origami-dnn.core :as origami-dnn]
+            [opencv4.dnn.core :as origami-dnn]
             [origami-dnn.draw :as d]
             [opencv4.utils :refer [resize-by simple-cam-window]]))
 
