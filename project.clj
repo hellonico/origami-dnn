@@ -1,4 +1,4 @@
-(defproject origami-dnn "0.1.7"
+(defproject origami-dnn "0.1.8-SNAPSHOT"
   :main opencv4.dnn.core
 
   ; FIXME: just replace this in all the examples and revert
