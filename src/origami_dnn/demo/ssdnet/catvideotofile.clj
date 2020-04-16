@@ -2,20 +2,21 @@
   (:require [origami-dnn.net.mobilenet :refer [find-objects]]
             [opencv4.utils :refer [show re-show]]
             [origami-dnn.draw :as d]
-            [opencv4.video :refer [CV_CAP_PROP_FRAME_HEIGHT CV_CAP_PROP_FRAME_WIDTH new-videowriter]]
+            [opencv4.video :refer [CAP_PROP_FRAME_HEIGHT CAP_PROP_FRAME_WIDTH new-videowriter]]
             [opencv4.dnn.core :as origami-dnn]
             [opencv4.core :refer [new-mat resize! new-size new-videocapture imread imwrite]])
   (:import (java.util Date)))
 
 (defn- video-size [cap]
-  (new-size (.get cap CV_CAP_PROP_FRAME_WIDTH) (.get cap CV_CAP_PROP_FRAME_HEIGHT) ))
+  (new-size (.get cap CAP_PROP_FRAME_WIDTH) (.get cap CAP_PROP_FRAME_HEIGHT) ))
 
 (defn -main [& args]
     (let [
           input (or (first args) "resources/cat.mp4")
           output-file (or (second args) (str "cat_" (Date.) ".mpeg"))
           [net opts labels] (origami-dnn/read-net-from-repo "networks.caffe:mobilenet:1.0.0")
-          cap (new-videocapture input )
+          cap (new-videocapture) 
+          _ (.open cap input)
           stream-size (video-size cap)
           buffer (new-mat)
           w (new-videowriter)
@@ -24,7 +25,7 @@
     ]
       (.open w output-file -1 24 stream-size)
       (println "Stream size:\t" stream-size)
-      (println "Frames:\t" (.get cap CV_CAP_PROP_POS_FRAMES))
+      ; (println "Frames:\t" (.get cap CAP_PROP_POS_FRAMES))
       (while (.read cap buffer)
         (let [annon 
               (-> buffer 

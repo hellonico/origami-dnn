@@ -14,18 +14,20 @@
   (let [input "./resources/vids/Marcel2.m4v"
         output-file "marcel2.mpeg"
         [net opts labels] (origami-dnn/read-net-from-repo "networks.caffe:mobilenet:1.0.0")
-        cap (new-videocapture input)
+        cap (new-videocapture)
+        _ (.open cap input)
         stream-size (rotated-video-size cap)
         buffer (new-mat)
         w (new-videowriter)]
     (println "Rotated Stream size:\t" stream-size)
-    (.open w output-file -1 24 (rotated-video-size cap))
+    (println (.open w output-file -1 24 (rotated-video-size cap)))
     (while (.read cap buffer)
       (let [annon
             (-> buffer
                 (rotate! ROTATE_90_CLOCKWISE)
                 (find-objects net opts)
                 (d/blue-boxes! labels))]
-        (.write w annon)))
+        (println (.write w annon))
+        ))
     (.release w)
     (.release cap)))
