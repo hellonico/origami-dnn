@@ -13,7 +13,7 @@
 (defn -main [& args]
     (let [
           input (or (first args) "resources/cat.mp4")
-          output-file (or (second args) (str "cat_" (Date.) ".mpeg"))
+          output-file (or (second args) (str "cat_" (Date.) ".mp4"))
           [net opts labels] (origami-dnn/read-net-from-repo "networks.caffe:mobilenet:1.0.0")
           cap (new-videocapture) 
           _ (.open cap input)
@@ -23,7 +23,7 @@
             ; need a fake frame before doing analysis probably due to the empty mat above
         ;   _frame (do (.read cap buffer) (resize! buffer (new-size 384 216)))
     ]
-      (.open w output-file -1 24 stream-size)
+      (.open w output-file 1196444237 12 stream-size)
       (println "Stream size:\t" stream-size)
       ; (println "Frames:\t" (.get cap CAP_PROP_POS_FRAMES))
       (while (.read cap buffer)
