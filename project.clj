@@ -38,10 +38,10 @@
             "resnet" ["run" "-m" "origami-dnn.demo.resnet"]
            
             "marcel" ["run" "-m" "origami-dnn.demo.marcel.marcel"]
-            "marcel2" ["run" "-m" "origami-dnn.demo.marcel.marcel2"]
+            "marcel.rotated" ["run" "-m" "origami-dnn.demo.marcel.marcel2"]
             }
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :repositories [["vendredi" "https://repository.hellonico.info/repository/hellonico/"]]
-  :dependencies [[org.clojure/clojure "1.8.0"] [origami/origami "4.3.0-1"]
+  :dependencies [[org.clojure/clojure "1.8.0"] [origami/origami "4.3.0-3-SNAPSHOT"]
   ])
