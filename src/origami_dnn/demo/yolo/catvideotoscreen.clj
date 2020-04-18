@@ -11,5 +11,3 @@
   {:frame {:width 500} :video {:device (or (first args) "resources/cat.mp4") }}
   (fn [buffer]
     (-> buffer (yolo/find-objects net) (d/blue-boxes! labels) )))))
-
-; (-main)

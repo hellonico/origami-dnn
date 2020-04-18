@@ -30,7 +30,7 @@
 
 (defn guess-gender [result labels]
    (let [img (first result) detected (second result) {confidence :confidence label :label} detected]
-     (put-text! img (str (nth labels label) "[" (int (* 100 confidence)) " %]") (new-point 100 100) FONT_HERSHEY_PLAIN 3 (new-scalar 0 0 0) 2)
+     (put-text! img (str (nth labels label) "[" (int (* 100 confidence)) " %]") (new-point 100 100) FONT_HERSHEY_PLAIN 4 rgb/black 3)
      img))
 
 (defn write-in-white [result labels]

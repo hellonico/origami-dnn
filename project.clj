@@ -27,9 +27,10 @@
             "yolo.v3" ["run" "-m" "origami-dnn.demo.yolo.v3"]
             "yolo.v3tiny" ["run" "-m" "origami-dnn.demo.yolo.v3-tiny"]
             "yolo.videotoscreen" ["run" "-m" "origami-dnn.demo.yolo.catvideotoscreen"]
-            "yolo.videotofile" ["run" "-m" "origami-dnn.demo.yolo.catvideotofile"]
+            ; "yolo.videotofile" ["run" "-m" "origami-dnn.demo.yolo.catvideotofile"]
            
             "convnet.age" ["run" "-m" "origami-dnn.demo.age"]
+            "convnet.age.cam" ["run" "-m" "origami-dnn.demo.agecam"]
             "convnet.gender" ["run" "-m" "origami-dnn.demo.gender"]
            
             "bvlc" ["run" "-m" "origami-dnn.demo.bvlc"]
