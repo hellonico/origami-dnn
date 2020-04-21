@@ -15,7 +15,10 @@
    ["vcs" "push"]]
 
   :jvm-opts ["-Djava.library.path=natives"]
-  :aliases {"mobilenet.cam" ["run" "-m" "origami-dnn.demo.ssdnet.cam"]
+  :aliases {
+  	         "fscam" ["run" "-m" "origami-dnn.demo.fscam"]
+
+  	         "mobilenet.cam" ["run" "-m" "origami-dnn.demo.ssdnet.cam"]
             "mobilenet.videotofile" ["run" "-m" "origami-dnn.demo.ssdnet.catvideotofile"]
             "mobilenet.videotoscreen" ["run" "-m" "origami-dnn.demo.ssdnet.catvideotoscreen"]
             "mobilenet.one" ["run" "-m" "origami-dnn.demo.ssdnet.onecat"]
@@ -44,7 +47,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :repositories [["vendredi" "https://repository.hellonico.info/repository/hellonico/"]]
-  :dependencies [[org.clojure/clojure "1.8.0"] [origami/origami "4.3.0-4-SNAPSHOT"]]
+  :dependencies [[org.clojure/clojure "1.8.0"] [origami/origami "4.3.0-4"]]
   :profiles {
     :uberjar {
       :aot :all
