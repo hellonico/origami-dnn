@@ -1,2 +1,33 @@
-{:mvn/repos {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
+{
+ :aliases
+ {
+ 	:fscam {:main-opts ["-m" "origami-dnn.demo.fscam"]}
+		:mobilenet.cam {:main-opts ["-m" "origami-dnn.demo.ssdnet.cam"]}
+  :mobilenet.videotofile {:main-opts ["-m" "origami-dnn.demo.ssdnet.catvideotofile"]}
+  :mobilenet.videotoscreen {:main-opts ["-m" "origami-dnn.demo.ssdnet.catvideotoscreen"]}
+  :mobilenet.one {:main-opts ["-m" "origami-dnn.demo.ssdnet.onecat"]}
+
+  :yolo.cam {:main-opts ["-m" "origami-dnn.demo.yolo.cam"]}
+  :yolo.one {:main-opts ["-m" "origami-dnn.demo.yolo.v2-tiny"]}
+  :yolo.v2 {:main-opts ["-m" "origami-dnn.demo.yolo.v2"]}
+  :yolo.v2tiny {:main-opts ["-m" "origami-dnn.demo.yolo.v2-tiny"]}
+  :yolo.v3 {:main-opts ["-m" "origami-dnn.demo.yolo.v3"]}
+  :yolo.v3tiny {:main-opts ["-m" "origami-dnn.demo.yolo.v3-tiny"]}
+  :yolo.videotoscreen {:main-opts ["-m" "origami-dnn.demo.yolo.catvideotoscreen"]}
+  ; "yolo.videotofile" {:main-opts ["-m" "origami-dnn.demo.yolo.catvideotofile"]}
+ 
+  :convnet.age {:main-opts ["-m" "origami-dnn.demo.age"]}
+  :convnet.age.cam {:main-opts ["-m" "origami-dnn.demo.agecam"]}
+  :convnet.gender {:main-opts ["-m" "origami-dnn.demo.gender"]}
+ 
+  :bvlc {:main-opts ["-m" "origami-dnn.demo.bvlc"]}
+  :googlenet {:main-opts ["-m" "origami-dnn.demo.googlenet"]}
+  :places365 {:main-opts ["-m" "origami-dnn.demo.places365"]}
+  :resnet {:main-opts ["-m" "origami-dnn.demo.resnet"]}
+ 
+  :marcel {:main-opts ["-m" "origami-dnn.demo.marcel.marcel"]}
+  :marcel.rotated {:main-opts ["-m" "origami-dnn.demo.marcel.marcel2"]}
+ }
+
+	:mvn/repos {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
  :deps {origami {:mvn/version "4.3.0-4"}}}
