@@ -2,10 +2,6 @@
 
 OpenCV DNN project building on [origami](https://github.com/hellonico/origami) to run Tensorflow/Caffe/Darknet networks for image/video real time analysis.
 
-This repository includes all the pretrained (large) network files required, and so is using [git lfs](https://git-lfs.github.com/) so make sure you install that first.
-
-
-
 # Run origami-dnn on a file 
 
 To run detection on a pretrained network, read the image, and call the network detection:
