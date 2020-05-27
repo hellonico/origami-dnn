@@ -29,6 +29,9 @@
             "yolo.v3" ["run" "-m" "origami-dnn.demo.yolo.v3"]
             "yolo.v3tiny" ["run" "-m" "origami-dnn.demo.yolo.v3-tiny"]
             "yolo.videotoscreen" ["run" "-m" "origami-dnn.demo.yolo.catvideotoscreen"]
+
+            "enet" ["run" "-m" "origami-dnn.demo.yolo.enet"]
+            "openimages" ["run" "-m" "origami-dnn.demo.yolo.openimages"]
             ; "yolo.videotofile" ["run" "-m" "origami-dnn.demo.yolo.catvideotofile"]
 
             "convnet.age" ["run" "-m" "origami-dnn.demo.age"]
@@ -42,6 +45,7 @@
 
             "marcel" ["run" "-m" "origami-dnn.demo.marcel.marcel"]
             "marcel.rotated" ["run" "-m" "origami-dnn.demo.marcel.marcel2"]
+
 
             "cifar" ["run" "-m" "origami-dnn.demo.cifar"]}
   :license {:name "Eclipse Public License"

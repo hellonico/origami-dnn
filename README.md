@@ -60,6 +60,9 @@ To run detection on a pretrained network, read the image, and call the network d
 | googlenet | Run object classification using googlenet |
 | places365 | Run object classification using places365 |
 | resnet | Run object classfication using Resnet |
+| cifar | Classification using a custom Trained Darknet Model based on cifar |
+| enet | Run detection with enet |
+| openimages | Run detection with Yolo v3 Trained on OpenImages |
 
 # Marcel le chat
 

@@ -13,6 +13,8 @@
   :yolo.v3tiny {:main-opts ["-m" "origami-dnn.demo.yolo.v3-tiny"]}
   :yolo.videotoscreen {:main-opts ["-m" "origami-dnn.demo.yolo.catvideotoscreen"]}
   ; "yolo.videotofile" {:main-opts ["-m" "origami-dnn.demo.yolo.catvideotofile"]}
+  :enet {:main-opts ["-m" "origami-dnn.demo.yolo.enet"]}
+  :openimages {:main-opts ["-m" "origami-dnn.demo.yolo.openimages"]}
 
   :convnet.age {:main-opts ["-m" "origami-dnn.demo.age"]}
   :convnet.age.cam {:main-opts ["-m" "origami-dnn.demo.agecam"]}
