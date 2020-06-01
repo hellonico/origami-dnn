@@ -46,7 +46,7 @@
             "marcel" ["run" "-m" "origami-dnn.demo.marcel.marcel"]
             "marcel.rotated" ["run" "-m" "origami-dnn.demo.marcel.marcel2"]
 
-
+            "flowers" ["run" "-m" "origami-dnn.demo.flowers"]
             "cifar" ["run" "-m" "origami-dnn.demo.cifar"]}
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}

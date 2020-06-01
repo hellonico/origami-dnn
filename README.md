@@ -63,6 +63,7 @@ To run detection on a pretrained network, read the image, and call the network d
 | cifar | Classification using a custom Trained Darknet Model based on cifar |
 | enet | Run detection with enet |
 | openimages | Run detection with Yolo v3 Trained on OpenImages |
+| flowers | Flower detection based on trained oxford102 |
 
 # Marcel le chat
 

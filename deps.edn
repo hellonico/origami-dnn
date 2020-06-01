@@ -28,7 +28,8 @@
   :marcel {:main-opts ["-m" "origami-dnn.demo.marcel.marcel"]}
   :marcel.rotated {:main-opts ["-m" "origami-dnn.demo.marcel.marcel2"]}
 
-  :cifar {:main-opts ["-m" "origami-dnn.demo.cifar"]}}
+  :cifar {:main-opts ["-m" "origami-dnn.demo.cifar"]}
+  :flowers {:main-opts ["-m" "origami-dnn.demo.flowers"]}}
 
  :mvn/repos {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
  :deps {origami {:mvn/version "4.3.0-8"}}}
