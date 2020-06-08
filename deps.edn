@@ -28,6 +28,8 @@
   :marcel {:main-opts ["-m" "origami-dnn.demo.marcel.marcel"]}
   :marcel.rotated {:main-opts ["-m" "origami-dnn.demo.marcel.marcel2"]}
 
+  :tensorflow.mobilenet {:main-opts ["-m" "origami-dnn.demo.tensorflow.mobilenet"]}
+
   :cifar {:main-opts ["-m" "origami-dnn.demo.cifar"]}
   :flowers {:main-opts ["-m" "origami-dnn.demo.flowers"]}}
 

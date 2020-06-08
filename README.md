@@ -19,7 +19,6 @@ To run detection on a pretrained network, read the image, and call the network d
 ```
 (ns origami-dnn.demo.ssdnet.cam
   (:require [origami-dnn.net.mobilenet :refer [find-objects]]
-            [opencv4.dnn :as dnn]
             [origami-dnn.core :as origami-dnn]
             [origami-dnn.draw :as d]
             [opencv4.utils :refer [resize-by simple-cam-window]]))
@@ -38,32 +37,33 @@ To run detection on a pretrained network, read the image, and call the network d
 
 ![doc/detected.jpg](doc/detected.jpg)
 
-| Lein Alias           | Example                                                      |
-| -------------------- | ------------------------------------------------------------ |
-| mobilenet.cam           | Run mobilenet on a webcam stream                    |
-| mobilenet.videotofile   | Run mobilenet on a video file, and store it as a file  |
-| mobilenet.videotoscreen | Run mobilenet on a video file, and display the file in a window |
-| mobilenet.one           | Run mobilenet on one image and save the picture as a file |
-| yolo.cam             | Run yolo on a webcam stream                                  |
-| yolo.one             | Run yolo (tiny) on a picture                                 |
-| yolo.v2              | Run yolo v2 on a picture                                     |
-| yolo.v2tiny          | Run yolo v2 tiny on a picture                                |
-| yolo.v3              | Run yolo v3 on a picture                                     |
-| yolo.v3tiny          | Run yolo v3 tiny on a picture                                |
-| yolo.videotoscreen   | Run yolo on a video file, and display the file in a window   |
-| yolo.videotofile     | Run yolo don a video file, and save the picture as a file    |
-| convnet.gender   | Run convnet on a picture, determine male or female |
-| convnet.age | Run cnet on a picture, determine age                      |
-| marcel | Run detection using mobilet on video and display |
-| marcel2 | Run detection using mobilenet on video and save to file |
-| bvlc | Run object classification using bvlc |
-| googlenet | Run object classification using googlenet |
-| places365 | Run object classification using places365 |
-| resnet | Run object classfication using Resnet |
-| cifar | Classification using a custom Trained Darknet Model based on cifar |
-| enet | Run detection with enet |
-| openimages | Run detection with Yolo v3 Trained on OpenImages |
-| flowers | Flower detection based on trained oxford102 |
+
+| Alias           | Format     | Network | Version | DataSet  | Type | Example                                                      |
+| -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| mobilenet.cam           | caffe      | mobilenet |            |            |            | Run mobilenet on a webcam stream                    |
+| mobilenet.videotofile   | caffe | mobilenet |    |    |    | Run mobilenet on a video file, and store it as a file  |
+| mobilenet.videotoscreen | caffe | mobilenet |  |  |  | Run mobilenet on a video file, and display the file in a window |
+| mobilenet.one           | caffe      | mobilenet  |            |            |            | Run mobilenet on one image and save the picture as a file |
+| yolo.cam             | darknet     | Yolo         |              |              |              | Run yolo on a webcam stream                                  |
+| yolo.one             | darknet      | Yolo         |              |              |              | Run yolo (tiny) on a picture                                 |
+| yolo.v2              | darknet       | Yolo          | v2          |               |               | Run yolo v2 on a picture                                     |
+| yolo.v2tiny          | darknet   | Yolo      | v2.tiny |           |           | Run yolo v2 tiny on a picture                                |
+| yolo.v3              | darknet       | Yolo          | v3           |               |               | Run yolo v3 on a picture                                     |
+| yolo.v3tiny          | darknet   | Yolo      | v3.tiny   |           |           | Run yolo v3 tiny on a picture                                |
+| yolo.videotoscreen   | darknet | Yolo |    |    |    | Run yolo on a video file, and display the file in a window   |
+| yolo.videotofile     | darknet | Yolo |      |      |      | Run yolo don a video file, and save the picture as a file    |
+| convnet.gender   | caffe | ConvNet |    |    | classification | Run convnet on a picture, determine male or female |
+| convnet.age | caffe | ConvNet |  |  | classification | Run cnet on a picture, determine age                      |
+| marcel | caffe | MobileNet |  |  | detection | Run detection using mobilet on video and display |
+| marcel2 | caffe | MobileNet |  |  | detection | Run detection using mobilenet on video and save to file |
+| bvlc | caffe | AlexNet |  |  | classification | Run object classification using bvlc |
+| places365 | caffe |  |  |  | classification | Run object classification using places365 |
+| resnet | caffe | ResNet |  |  | classification | Run object classfication using Resnet |
+| cifar | darknet |  |  |  | classification | Classification using a custom Trained Darknet Model based on cifar |
+| enet | darknet | Enet |  |  |  | Run detection with enet |
+| openimages | darknet |  |  |  |  | Run detection with Yolo v3 Trained on OpenImages |
+| flowers | caffe |  |  |  |  | Flower detection based on trained oxford102 |
+| tensorflow.mobilenet | tensorflow | MobileNet | V1 | Coco | Detection | On an image |
 
 # Marcel le chat
 

@@ -33,13 +33,15 @@
             "enet" ["run" "-m" "origami-dnn.demo.yolo.enet"]
             "openimages" ["run" "-m" "origami-dnn.demo.yolo.openimages"]
             ; "yolo.videotofile" ["run" "-m" "origami-dnn.demo.yolo.catvideotofile"]
+            ; 
+            "tensorflow.mobilenet" ["run" "-m" "origami-dnn.demo.tensorflow.mobilenet"]
 
             "convnet.age" ["run" "-m" "origami-dnn.demo.age"]
             "convnet.age.cam" ["run" "-m" "origami-dnn.demo.agecam"]
             "convnet.gender" ["run" "-m" "origami-dnn.demo.gender"]
 
             "bvlc" ["run" "-m" "origami-dnn.demo.bvlc"]
-            "googlenet" ["run" "-m" "origami-dnn.demo.googlenet"]
+            ; "googlenet" ["run" "-m" "origami-dnn.demo.googlenet"]
             "places365" ["run" "-m" "origami-dnn.demo.places365"]
             "resnet" ["run" "-m" "origami-dnn.demo.resnet"]
 
