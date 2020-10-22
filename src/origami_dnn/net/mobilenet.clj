@@ -1,9 +1,7 @@
 (ns origami-dnn.net.mobilenet
   (:require
-   [opencv4.utils :as u]
-   [opencv4.dnn :as dnn]
-   [origami-dnn.net.core :refer [blob-from-image] ]
-   [opencv4.core :refer [new-size new-point new-rect new-scalar]]))
+   [origami-dnn.net.core :refer [blob-from-image]]
+   [opencv4.core :refer [new-point new-rect]]))
 
 (defn- to-obj [reshaped i colsi rowsi]
   {:confidence

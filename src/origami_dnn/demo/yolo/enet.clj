@@ -2,7 +2,7 @@
   (:require
    [origami-dnn.net.yolo :as yolo]
    [origami-dnn.draw :as d]
-   [opencv4.core :refer [min-max-loc new-size new-scalar imread imwrite]]
+   [opencv4.core :refer [imread imwrite]]
    [opencv4.dnn.core :as origami-dnn]))
 
 (defn run-yolo [& args]
