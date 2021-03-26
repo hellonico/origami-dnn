@@ -14,14 +14,19 @@
         detected-objects (sort-by :confidence > (map #(to-obj detections %) (range 0 (.cols detections))))]
     [image (take 3 detected-objects)]))
 
-(defn run-net [input output]
-  (let [[net opt labels] (origami-dnn/read-net-from-repo "networks.caffe:flowers:1.0.0")]
-    (println "Find flowers from image:" input " > " output)
-    (-> input
+(defn -run-one[net opt labels input output]
+(-> input
         (imread)
         (find-objects net opt)
         (d/write-in-white2 labels)
-        (imwrite output))))
+        (imwrite output)))
+
+(defn run-net [input output]
+  (let [[net opt labels] (origami-dnn/read-net-from-repo "networks.caffe:flowers:1.0.0")]
+    (println "Find flowers from image:" input " > " output)
+    (if (.isDirectory (clojure.java.io/as-file input))
+        (do (.mkdir (clojure.java.io/as-file output)) (doseq [f (.listFiles (clojure.java.io/as-file input))] (-run-one net opt labels (.getAbsolutePath f) (str output "/" (.getName f)))))
+        (-run-one net opt labels input output))))
 
 (defn -main [& args]
   (run-net
