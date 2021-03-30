@@ -1,6 +1,7 @@
 (ns origami-dnn.demo.flowers
   (:require [opencv4.core :refer [imread imwrite]]
             [opencv4.dnn.core :as origami-dnn]
+            [clojure.java.io  :as io]
             [origami-dnn.net.core :refer [blob-from-image]]
             [origami-dnn.draw :as d]))
 
@@ -24,8 +25,8 @@
 (defn run-net [input output]
   (let [[net opt labels] (origami-dnn/read-net-from-repo "networks.caffe:flowers:1.0.0")]
     (println "Find flowers from image:" input " > " output)
-    (if (.isDirectory (clojure.java.io/as-file input))
-        (do (.mkdir (clojure.java.io/as-file output)) (doseq [f (.listFiles (clojure.java.io/as-file input))] (-run-one net opt labels (.getAbsolutePath f) (str output "/" (.getName f)))))
+    (if (.isDirectory (io/as-file input))
+        (do (.mkdir (io/as-file output)) (doseq [f (.listFiles (io/as-file input))] (-run-one net opt labels (.getAbsolutePath f) (str output "/" (.getName f)))))
         (-run-one net opt labels input output))))
 
 (defn -main [& args]

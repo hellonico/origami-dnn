@@ -106,7 +106,6 @@ where the alias cifar is one according to the table below:
 | :yolo.v3 |
 | :yolo.v3tiny |
 | :yolo.videotoscreen |
-| ; |
 | "yolo.videotofile" |
 | :enet |
 | :openimages |
@@ -122,3 +121,23 @@ where the alias cifar is one according to the table below:
 | :tensorflow.mobilenet |
 | :cifar |
 | :flowers |
+
+or create a deps.edn with the following content:
+
+```
+{:mvn/repos
+   {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
+ :deps
+   { origami-dnn {:mvn/version "0.1.12"}}}
+```
+
+and run one of the namespaces like shown below:
+```
+ clj -m origami-dnn.demo.agecam
+```
+or start a repl and do the same:
+```
+# clj 
+(require '[origami-dnn.demo.agecam :as agecam])
+(agecam/-main)
+```
