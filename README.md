@@ -82,3 +82,43 @@ or another one ...
 ![](doc/marcel2.gif)
 
 Video courtesy of Marcel le chat.
+
+# Using the clj command
+
+```
+clj -Mcifar
+```
+
+where the alias cifar is one according to the table below:
+
+
+| Alias           |
+| -------------------- |
+| :fscam |
+| :mobilenet.cam |
+| :mobilenet.videotofile |
+| :mobilenet.videotoscreen |
+| :mobilenet.one |
+| :yolo.cam |
+| :yolo.one |
+| :yolo.v2 |
+| :yolo.v2tiny |
+| :yolo.v3 |
+| :yolo.v3tiny |
+| :yolo.videotoscreen |
+| ; |
+| "yolo.videotofile" |
+| :enet |
+| :openimages |
+| :convnet.age |
+| :convnet.age.cam |
+| :convnet.gender |
+| :bvlc |
+| :googlenet |
+| :places365 |
+| :resnet |
+| :marcel |
+| :marcel.rotated |
+| :tensorflow.mobilenet |
+| :cifar |
+| :flowers |
