@@ -128,12 +128,14 @@ or create a deps.edn with the following content:
 {:mvn/repos
    {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
  :deps
-   { origami-dnn {:mvn/version "0.1.12"}}}
+   { origami-dnn {:mvn/version "0.1.13"}}}
 ```
 
 and run one of the namespaces like shown below:
 ```
- clj -m origami-dnn.demo.agecam
+clj -m origami-dnn.demo.agecam
+#  or
+clj -m origami-dnn.demo.yolo.cam
 ```
 or start a repl and do the same:
 ```
