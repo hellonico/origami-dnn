@@ -1,7 +1,5 @@
 (ns origami-dnn.demo.tensorflow.mobilenet
   (:require [opencv4.core :refer [imread imwrite]]
-            [opencv4.dnn :as dnn]
-            [opencv4.utils :as u]
             [opencv4.dnn.core :as origami-dnn]
             [clojure.pprint]
             [origami-dnn.draw :as d]
