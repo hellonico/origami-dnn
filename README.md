@@ -24,7 +24,7 @@ To run detection on a pretrained network, read the image, and call the network d
             [opencv4.utils :refer [resize-by simple-cam-window]]))
 
 (defn -main [& args]
-  (let [ [net opts labels] (origami-dnn/read-net-from-folder "networks/caffe/mobilenet") ]
+  (let [ [net opts labels] (origami-dnn/read-net-from-repo "networks.tensorflow:tf-ssdmobilenet:1.0.0") ]
     (simple-cam-window
      (read-string (slurp "cam_config.edn"))
      (fn [buffer]
