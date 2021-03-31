@@ -28,6 +28,7 @@
             "yolo.v2tiny" ["run" "-m" "origami-dnn.demo.yolo.v2-tiny"]
             "yolo.v3" ["run" "-m" "origami-dnn.demo.yolo.v3"]
             "yolo.v3tiny" ["run" "-m" "origami-dnn.demo.yolo.v3-tiny"]
+            "yolo.v4" ["run" "-m" "origami-dnn.demo.yolo.v4"]
             "yolo.videotoscreen" ["run" "-m" "origami-dnn.demo.yolo.catvideotoscreen"]
 
             "enet" ["run" "-m" "origami-dnn.demo.yolo.enet"]

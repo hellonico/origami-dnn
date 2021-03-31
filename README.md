@@ -50,6 +50,7 @@ To run detection on a pretrained network, read the image, and call the network d
 | yolo.v2tiny          | darknet   | Yolo      | v2.tiny |           |           | Run yolo v2 tiny on a picture                                |
 | yolo.v3              | darknet       | Yolo          | v3           |               |               | Run yolo v3 on a picture                                     |
 | yolo.v3tiny          | darknet   | Yolo      | v3.tiny   |           |           | Run yolo v3 tiny on a picture                                |
+| yolo.v4 | darknet | Yolo | v4 | | | Run yolo v4 on a picture |
 | yolo.videotoscreen   | darknet | Yolo |    |    |    | Run yolo on a video file, and display the file in a window   |
 | yolo.videotofile     | darknet | Yolo |      |      |      | Run yolo don a video file, and save the picture as a file    |
 | convnet.gender   | caffe | ConvNet |    |    | classification | Run convnet on a picture, determine male or female |
@@ -105,6 +106,7 @@ where the alias cifar is one according to the table below:
 | :yolo.v2tiny |
 | :yolo.v3 |
 | :yolo.v3tiny |
+| :yolo.v4 |
 | :yolo.videotoscreen |
 | "yolo.videotofile" |
 | :enet |
