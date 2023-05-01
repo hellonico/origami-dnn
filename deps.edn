@@ -37,4 +37,4 @@
             }}
 
  :mvn/repos {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
- :deps {origami/origami {:mvn/version "4.5.1-0"}}}
+ :deps {origami/origami {:mvn/version "4.7.0-0"}}}
