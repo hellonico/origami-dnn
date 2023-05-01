@@ -14,7 +14,7 @@
    ["vcs" "commit"]
    ["vcs" "push"]]
 
-  :jvm-opts ["-Djava.library.path=natives"]
+  ;; :jvm-opts ["-Djava.library.path=natives"]
   :aliases {"fscam" ["run" "-m" "origami-dnn.demo.fscam"]
 
             "mobilenet.cam" ["run" "-m" "origami-dnn.demo.ssdnet.cam"]
@@ -55,5 +55,5 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :repositories [["vendredi" "https://repository.hellonico.info/repository/hellonico/"]]
 
-  :dependencies [[org.clojure/clojure "1.10.0"] [origami/origami "4.5.1-0"]]
+  :dependencies [[org.clojure/clojure "1.10.0"] [origami/origami "4.7.0-0"]]
   :profiles {:uberjar {:aot :all}})
