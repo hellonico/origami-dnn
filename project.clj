@@ -29,6 +29,8 @@
             "yolo.v3" ["run" "-m" "origami-dnn.demo.yolo.v3"]
             "yolo.v3tiny" ["run" "-m" "origami-dnn.demo.yolo.v3-tiny"]
             "yolo.v4" ["run" "-m" "origami-dnn.demo.yolo.v4"]
+            "yolo.v6" ["run" "-m" "origami-dnn.demo.yolo.v6"]
+            "yolo.v6cam" ["run" "-m" "origami-dnn.demo.yolo.v6cam"]
             "yolo.videotoscreen" ["run" "-m" "origami-dnn.demo.yolo.catvideotoscreen"]
 
             "enet" ["run" "-m" "origami-dnn.demo.yolo.enet"]
@@ -55,5 +57,5 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :repositories [["vendredi" "https://repository.hellonico.info/repository/hellonico/"]]
 
-  :dependencies [[org.clojure/clojure "1.10.0"] [origami/origami "4.7.0-1"]]
+  :dependencies [[org.clojure/clojure "1.10.0"] [origami/origami "4.7.0-2"]]
   :profiles {:uberjar {:aot :all}})

@@ -1,4 +1,4 @@
-(ns origami-dnn.net.yolo
+(ns origami-dnn.net.yolov6
   (:require [opencv4.core :refer [min-max-loc new-rect2d new-rect new-matofrect2d new-arraylist new-mat new-size new-scalar new-matofint new-matoffloat] :as cv]
             [opencv4.dnn :as dnn])
   (:import (org.opencv.core Mat MatOfPoint3 MatOfPoint3f)))
@@ -39,7 +39,7 @@
             out (.reshape _out 1 8400)
             _h (.height out) _w (.width out)
             ]
-      (cv/infos [["out" out]["image" _image]])
+      ;(cv/infos [["out" out]["image" _image]])
 
       (dotimes [j _h]
 
@@ -60,6 +60,6 @@
                 (.add tmpConfidences (-> result (.-maxVal) float))
                 (.add tmpLocations rect)
                 (.add tmpClasses (-> result (.-maxLoc) (.-x) int)))) )))))
-    (println (nms-filtered-objects tmpClasses tmpLocations tmpConfidences))
+    ;(println (nms-filtered-objects tmpClasses tmpLocations tmpConfidences))
     [_image (nms-filtered-objects tmpClasses tmpLocations tmpConfidences)]
     ))

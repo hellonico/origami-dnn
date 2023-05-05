@@ -13,6 +13,8 @@
   :yolo.v3 {:main-opts ["-m" "origami-dnn.demo.yolo.v3"]}
   :yolo.v3tiny {:main-opts ["-m" "origami-dnn.demo.yolo.v3-tiny"]}
   :yolo.v4 {:main-opts ["-m" "origami-dnn.demo.yolo.v4"]}
+  :yolo.v6 {:main-opts ["-m" "origami-dnn.demo.yolo.v6"]}
+  :yolo.v6cam {:main-opts ["-m" "origami-dnn.demo.yolo.v6cam"]}
   :yolo.videotoscreen {:main-opts ["-m" "origami-dnn.demo.yolo.catvideotoscreen"]}
   ; "yolo.videotofile" {:main-opts ["-m" "origami-dnn.demo.yolo.catvideotofile"]}
   :enet {:main-opts ["-m" "origami-dnn.demo.yolo.enet"]}
@@ -37,4 +39,4 @@
             }}
 
  :mvn/repos {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
- :deps {origami/origami {:mvn/version "4.7.0-1"}}}
+ :deps {origami/origami {:mvn/version "4.7.0-2"}}}
