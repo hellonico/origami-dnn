@@ -8,7 +8,7 @@
 (defn run-yolo [& args]
   (let [input (or (first args) "resources/catwalk.jpg")
         ;; [net _ labels] (origami-dnn/read-net-from-folder "yolov4")
-        [net _ labels] (origami-dnn/read-net-from-repo "networks.yolo:yolov6:1.0.0")
+        [net _ labels] (origami-dnn/read-net-from-repo "networks.yolo:yolov6n:1.0")
         output (or (second args) "yolo_output.jpg")]
     (println "Running yolo on image:" input " > " output)
     (-> input
