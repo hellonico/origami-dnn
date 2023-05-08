@@ -5,12 +5,9 @@
    [opencv4.core :refer [min-max-loc new-size new-scalar imread imwrite]]
    [opencv4.dnn.core :as origami-dnn]))
 
-(defn run-yolo [& args]
-  (let [input (or (first args) "resources/catwalk.jpg")
-        ;; [net _ labels] (origami-dnn/read-net-from-folder "yolov4")
-        [net _ labels] (origami-dnn/read-net-from-repo "networks.yolo:yolov6n:1.0")
-        output (or (second args) "yolo_output.jpg")]
-    (println "Running yolo on image:" input " > " output)
+(defn run-yolo [input output network]
+  (println "Running " network " on image:" input " > " output)
+  (let [[net _ labels] (origami-dnn/read-net-from-repo network)]
     (-> input
         (imread)
         (yolo/find-objects net)
@@ -20,4 +17,5 @@
 (defn -main [& args]
   (run-yolo
    (or (first args) "resources/catwalk.jpg")
-   (or (second args) "yolo_v6_output.jpg")))
+   (or (second args) "yolo_v6_output.jpg")
+   (nth args 3 "networks.yolo:yolov6n:1.0")))

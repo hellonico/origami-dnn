@@ -48,7 +48,7 @@
               result (min-max-loc scores)]
           ;(cv/infos [["scores" scores] ["row" row]])
 
-          (if (> (.-maxVal result) 0.5)
+          (if (> (.-maxVal result) 0.7)
             (do
               (let [center-x (* ratiow (nth (.get row 0 0) 0))
                     center-y (* ratioh (nth (.get row 0 1) 0))

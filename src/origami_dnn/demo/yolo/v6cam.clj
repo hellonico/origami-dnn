@@ -6,8 +6,14 @@
             [opencv4.utils :refer [simple-cam-window]]))
 
 (defn -main [& args]
-  (let [[net _ labels] (origami-dnn/read-net-from-repo "networks.yolo:yolov6n:1.0")]
+  (let [
+        network-name (or (first args) "networks.yolo:yolov6n:1.0")
+        [net _ labels] (origami-dnn/read-net-from-repo network-name)]
     (simple-cam-window
-      {:frame {:fps true} :video {:device  (or (first args) 0)}}
+      (or (second args) {:frame {:fps true} :video {:device 0}})
       (fn [buffer]
-        (-> buffer (yolo/find-objects net) (d/blue-boxes! labels) )))))
+        (-> buffer
+            (yolo/find-objects net)
+            (d/blue-boxes! labels)
+            (d/add-network-info! network-name)
+            ) ))))

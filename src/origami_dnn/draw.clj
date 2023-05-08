@@ -14,6 +14,9 @@
           (recur (next vals#) (inc ~index-sym)))
         nil))))
 
+(defn add-network-info! [img network]
+  (put-text! img network (new-point (- (.height img) 100) 50) FONT_HERSHEY_PLAIN 3 rgb/azure-1 3) img)
+
 (defn black-boxes! [result labels]
   (let [img (first result) detected (second result)]
     (doseq [{confidence :confidence label :label box :box} detected]

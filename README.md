@@ -2,6 +2,21 @@
 
 OpenCV DNN project building on [origami](https://github.com/hellonico/origami) to run Tensorflow/Caffe/Darknet networks for image/video real time analysis.
 
+# New YoloV6
+
+To quickly get started, run one of the following command:
+
+```bash
+# Yolo v6n
+lein yolo.v6cam networks.yolo:yolov6n:1.0
+# Yolo v6s
+lein yolo.v6cam networks.yolo:yolov6s:1.0
+# Yolo v6t
+lein yolo.v6cam networks.yolo:yolov6t:1.0
+# Yolo v6l
+lein yolo.v6cam networks.yolo:yolov6l:1.0
+```
+
 # Run origami-dnn on a file 
 
 To run detection on a pretrained network, read the image, and call the network detection:
@@ -93,17 +108,21 @@ Create a deps.edn with the following content:
 {:mvn/repos
    {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
  :deps
-   { origami-dnn {:mvn/version "0.1.13"}}}
+   { origami-dnn {:mvn/version "0.1.16"}}}
 ```
 
 and run one of the namespaces like shown below:
-```
+```bash
+# Run age detection on a cam
 clj -m origami-dnn.demo.agecam
-#  or
+# Run Yolo on a cam
 clj -m origami-dnn.demo.yolo.cam
+# Run YoloV6 on a cam
+clj -m origami-dnn.demo.yolo.v6cam
 ```
+
 or start a repl and do the same:
-```
+```clj
 # clj 
 (require '[origami-dnn.demo.agecam :as agecam])
 (agecam/-main)
