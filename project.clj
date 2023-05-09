@@ -1,4 +1,4 @@
-(defproject origami-dnn "0.1.18-SNAPSHOT"
+(defproject origami-dnn "0.1.18"
   :main origami-dnn.demo.yolo.cam
 
   ; FIXME: just replace this in all the examples and revert
