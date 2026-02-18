@@ -1,6 +1,5 @@
 {:aliases
- {
-  :fscam {:main-opts ["-m" "origami-dnn.demo.fscam"]}
+ {:fscam {:main-opts ["-m" "origami-dnn.demo.fscam"]}
   :mobilenet.cam {:main-opts ["-m" "origami-dnn.demo.ssdnet.cam"]}
   :mobilenet.videotofile {:main-opts ["-m" "origami-dnn.demo.ssdnet.catvideotofile"]}
   :mobilenet.videotoscreen {:main-opts ["-m" "origami-dnn.demo.ssdnet.catvideotoscreen"]}
@@ -35,8 +34,7 @@
   :tensorflow.mobilenet {:main-opts ["-m" "origami-dnn.demo.tensorflow.mobilenet"]}
 
   :cifar {:main-opts ["-m" "origami-dnn.demo.cifar"]}
-  :flowers {:main-opts ["-m" "origami-dnn.demo.flowers"]
-            }}
+  :flowers {:main-opts ["-m" "origami-dnn.demo.flowers"]}}
 
  :mvn/repos {"vendredi" {:url "https://repository.hellonico.info/repository/hellonico/"}}
- :deps {origami/origami {:mvn/version "4.7.0-5"}}}
+ :deps {origami/origami {:mvn/version "4.13.0-2-SNAPSHOT"}}}
