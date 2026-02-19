@@ -57,5 +57,5 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :repositories [["vendredi" "https://repository.hellonico.info/repository/hellonico/"]]
 
-  :dependencies [[org.clojure/clojure "1.10.0"] [origami/origami "4.13.0-2-SNAPSHOT"]]
+  :dependencies [[org.clojure/clojure "1.10.0"] [origami/origami "4.13.0-3-SNAPSHOT"]]
   :profiles {:uberjar {:aot :all}})

@@ -16,7 +16,7 @@
 
 (defn -main [& args]
   (run-net
-   (or (first args) "resources/caffe/gender/teenager2.jpg")
+   (or (first args) "resources/pics/teenager2.jpg")
    (or (second args) "gender_output.jpg")))
 
 
